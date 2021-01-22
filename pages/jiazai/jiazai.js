@@ -1,4 +1,5 @@
-// pages/jiazai/jiazai.js
+var e = require("../../zong_js/bmob.js"), o = getApp();
+
 Page({
   data: {
       remind: "加载中",
@@ -7,6 +8,7 @@ Page({
   },
   onLoad: function() {},
   onGotUserInfo: function(o) {
+   
       if (o.detail.userInfo) {
           try {
               wx.getStorageSync("user_openid") || (console.log("执行login1"), wx.login({
@@ -74,11 +76,11 @@ Page({
   onShow: function() {
       console.log("onLoad");
       var e = this;
-      o.getUserInfo(function(o) {
-          e.setData({
-              userInfo: o
-          });
-      });
+    //   o.getUserInfo(function(o) {
+    //       e.setData({
+    //           userInfo: o
+    //       });
+    //   });
   },
   onReady: function() {
       var e = this;
@@ -92,5 +94,6 @@ Page({
               angle: n
           });
       });
-  }
+  },
+
 });
